@@ -7,42 +7,42 @@ const Skills = () => {
         id: 1,
         name: "Vite",
         description: "React FrameWork",
-        logo: "public/assets/images/vite-logo-icon.jpeg",
+        logo: "assets/images/vite-logo-icon.jpeg",
         url: "https://vite.dev/"
     },
     {
         id: 2,
         name: "TailwindCSS",
         description: "CSS Library",
-        logo: "public/assets/images/tailwind-css-icon.png",
+        logo: "assets/images/tailwind-css-icon.png",
         url: "https://tailwindcss.com/",
     },
     {
         id: 3,
         name: "redux",
         description: "State Management",
-        logo: "public/assets/images/redux-logo-icon.png",
+        logo: "assets/images/redux-logo-icon.png",
         url: "https://redux.js.org/",
     },
     {
         id: 4,
         name: "Nodejs",
         description: "JavaScript Runtime",
-        logo: "public/assets/images/nodejs-logo-icon.jpg",
+        logo: "assets/images/nodejs-logo-icon.jpg",
         url: "https://nodejs.org/en",
     },
     {
         id: 5,
         name: "MongoDB",
         description: "Database System",
-        logo: "public/assets/images/mongodb-logo-icon.png",
+        logo: "assets/images/mongodb-logo-icon.png",
         url: "https://www.mongodb.com/",
     },
     {
         id: 6,
         name: "ExpressJs",
         description: "Backend Framework",
-        logo: "public/assets/images/express-js-logo.png",
+        logo: "assets/images/express-js-logo.png",
         url: "https://expressjs.com/",
     }]
     return (

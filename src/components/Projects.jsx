@@ -7,7 +7,7 @@ const Projects = () => {
   const projects = [{
     id: 1,
     name: "DevTinder",
-    photoUrl: "src/assets/images/devtinder-img.png",
+    photoUrl: "assets/images/devtinder-img.png",
     description: "A platform where developers can connect, collaborate, and network with others in the tech community.",
     liveLink: "https://devtinder.online"
 
@@ -15,7 +15,7 @@ const Projects = () => {
   {
     id: 2,
     name: "Youtube-Clone",
-    photoUrl: "src/assets/images/youtube-img.png",
+    photoUrl: "assets/images/youtube-img.png",
     description: "A YouTube clone with video streaming, user authentication, and custom features.",
     liveLink: "https://my-youtube-phi.vercel.app/"
 
@@ -23,7 +23,7 @@ const Projects = () => {
   {
     id: 3,
     name: "Netflix-GPT",
-    photoUrl: "src/assets/images/netflix-img-2.png",
+    photoUrl: "assets/images/netflix-img-2.png",
     description: "A Netflix-inspired platform integrated with GPT for personalized content recommendations.",
     liveLink: "https://netflix-gpt-pi-jet.vercel.app/"
 

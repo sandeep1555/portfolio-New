@@ -10,7 +10,7 @@ const ProfileCard = () => {
       <div className="card bg-base-100 md:w-96 w-[350px] shadow-xl ml-3 ">
         <figure className="px-10 mt-10 ">
           <img
-            src="public/assets/images/profile-pic.jpg"
+            src="assets/images/profile-pic.jpg"
             alt="photo"
             className="rounded-xl h-[350px] w-[250px] object-cover  " />
         </figure>
