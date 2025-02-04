@@ -12,7 +12,7 @@ const Home = () => {
 
 
       <button className="my-10 bg-gradient-to-r from-orange-700 to-red-600 text-white p-4 px-6 cursor-pointer text-xl rounded-md" onClick={() => window.open(
-        "https://drive.google.com/file/d/18OfdaKBePoGmDYkjto5AK88ysTirBkme/view?usp=sharing",
+        "https://drive.google.com/file/d/1TKf6w_jJz8bbnYABUcQnGLgYT00ELiQF/view?usp=sharing",
         "_blank",
         "noopener,noreferrer,width=800,height=600"
       )}
