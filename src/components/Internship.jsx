@@ -21,12 +21,7 @@ const Internship = () => {
 
                 {internship && internship.map((internship) => (
                     <div key={internship.id} className="card lg:card-side  shadow-xl my-4 md:w-[800px] p-4  cursor-default  bg-neutral-800 flex justify-center items-center">
-                        {/* <figure className='max-w-[180px] h-[150px]'>
-            <img className='object-cover '
-
-              src={internship.}
-              alt="img" />
-          </figure> */}
+                      
                         <div className="card-body">
                             <div className='md:flex items-center mb-4'>
                                 <h2 className="card-title text-3xl mt-[-20px]  text-white">{internship.name}</h2>
