@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import emailjs from '@emailjs/browser';
 const Contact = () => {
 
@@ -6,7 +6,7 @@ const Contact = () => {
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
   const [errorMessge, setErroeMessage] = useState(null);
-  const [successMessage,setSuccessMessage]=useState(null);
+  const [successMessage, setSuccessMessage] = useState(null);
   const [loading, setloading] = useState(false);
 
   const emailInfo = { from_name: name, email: email, message: message }
@@ -82,7 +82,7 @@ const Contact = () => {
         {errorMessge && <p className='text-white mt-6'>{errorMessge}</p>}
         {successMessage && <p className='text-white mt-6'>{successMessage}</p>}
 
-        <button onClick={handleClickSubmit} className='btn md:w-[700px] w-[325px] mt-[40px] mb-[20px] bg-gradient-to-r from-orange-700 to-red-600 text-white border-0'>{loading ? <span className="loading loading-spinner loading-md"></span> :"Submit"}</button>
+        <button onClick={handleClickSubmit} className='btn md:w-[700px] w-[325px] mt-[40px] mb-[20px] bg-gradient-to-r from-orange-700 to-red-600 text-white border-0'>{loading ? <span className="loading loading-spinner loading-md"></span> : "Submit"}</button>
 
 
       </div>
