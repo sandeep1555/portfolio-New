@@ -24,7 +24,7 @@ const Body = () => {
         </div>
 
         {/* Scrollable Home Section */}
-        <div className="md:w-7/12 w-full md:ml-[41%] md:overflow-y-auto h-full ">
+        <div className="md:w-7/12 w-full md:ml-[41%] md:overflow-y-hidden h-full ">
           <Home />
           <Projects />
           <Skills />

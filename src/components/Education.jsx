@@ -1,12 +1,35 @@
-import React from 'react'
+import { useInView,motion } from 'framer-motion';
+import React, { useRef } from 'react'
 
 const Education = () => {
+
+  const ref=useRef(null);
+  const educationRef=useRef(null);
+
+    const isInView=useInView(ref,{margin:"-100px"})
+
+    const isInEducationView=useInView(educationRef,{margin:"-80px"})
+
+
+
+  const textVariants = {
+    hidden: { opacity: 0, y: 50 },
+    visible: { opacity: 1, y: 0, transition: { duration: 1, ease: "linear" } },
+  }
+
+  
   return (
 
-    <div id='education' className='mt-[100px] md:mx-6 mx-4'>
+
+
+    
+
+    <div id='education' className='mt-[35px] pt-[65px] md:mx-6 mx-4'>
+      <motion.div ref={ref} initial="hidden" variants={textVariants} animate={isInView ? "visible" : "hidden"} >
       <h4 className="md:text-8xl text-5xl font-bold uppercase pb-4 text-white ">Education</h4>
       <h4 className="md:text-8xl text-5xl font-bold uppercase text-zinc-700 ">qualification</h4>
-      <div className='flex  md:ml-[100px] ml-[50px] mt-[40px]'>
+      </motion.div>
+      <motion.div ref={educationRef} initial="hidden" variants={textVariants} animate={isInEducationView ? "visible" : "hidden"} className='flex  md:ml-[100px] ml-[50px] mt-[40px]'>
         <ul className="steps steps-vertical ">
           <li data-content="●" className="step py-[50px]  ">
             <div className='  md:px-10 mt-[30px] text-stone-400 '>
@@ -31,7 +54,7 @@ const Education = () => {
           </li>
 
         </ul>
-      </div>
+      </motion.div>
 
     </div>
   )

@@ -1,6 +1,27 @@
+import { useInView,motion } from "framer-motion";
+import { useRef } from "react";
 
 
 const Skills = () => {
+
+
+    const ref = useRef(null);
+    const isInView = useInView(ref, { margin: "-100px" });
+    const skillsRef = useRef(null);
+
+    const isInSkillView = useInView(skillsRef, { margin: "-100px" });
+
+    const textVariants = {
+        hidden: { opacity: 0, y: 50 },
+        visible: { opacity: 1, y: 0, transition: { duration: 1, ease: "linear" } },
+    };
+
+    const skillsVariant = {
+
+        hidden: { opacity: 0, y: 30 },
+        visible: { opacity: 1, y: 0, transition: { duration: 1, ease: "easeOut" } }
+    }
+
 
 
     const skills = [{
@@ -46,8 +67,10 @@ const Skills = () => {
         url: "https://expressjs.com/",
     }]
     return (
-        <div id='skills' className='mt-[100px] mx-6'>
-            <h4 className="md:text-8xl text-6xl font-bold uppercase pb-4 text-white ">premium</h4>
+        <div ref={ref} id='skills' className='mt-[35px] pt-[65px] mx-6'>
+            <motion.h4 variants={textVariants} 
+                initial="hidden"
+                animate={isInView ? "visible" : "hidden"} className="md:text-8xl text-6xl font-bold uppercase pb-4 text-white ">premium</motion.h4>
             <h4 className="md:text-8xl text-6xl font-bold uppercase text-zinc-700 ">Tools</h4>
 
 
@@ -59,7 +82,7 @@ const Skills = () => {
                 {skills && skills.map((skill) => (
 
 
-                    <div key={skill.id} className="card card-side  shadow-xl mt-4  w-[300px] hover:bg-neutral-800 pl-3 cursor-pointer " onClick={() => window.open(
+                    <motion.div ref={skillsRef} variants={skillsVariant} animate={isInSkillView ? "visible" : "hidden"} key={skill.id} className="card card-side  shadow-xl mt-4  w-[300px] hover:bg-neutral-800 pl-3 cursor-pointer " onClick={() => window.open(
                         skill.url,
                         "_blank",
                         "noopener,noreferrer,width=800,height=600"
@@ -75,7 +98,7 @@ const Skills = () => {
                             <p className='text-stone-400'>{skill.description}.</p>
 
                         </div>
-                    </div>
+                    </motion.div>
 
                 ))}
 

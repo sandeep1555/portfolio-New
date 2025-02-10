@@ -1,5 +1,6 @@
-import { useState } from 'react'
+import { useRef, useState } from 'react'
 import emailjs from '@emailjs/browser';
+import { useInView,motion } from 'framer-motion';
 const Contact = () => {
 
   const [name, setName] = useState("");
@@ -38,6 +39,17 @@ const Contact = () => {
   }
 
 
+  const ref=useRef(null);
+  const isInView=useInView(ref,{margin:"-100px"})
+
+
+
+const textVariants = {
+  hidden: { opacity: 0, y: 50 },
+  visible: { opacity: 1, y: 0, transition: { duration: 1, ease: "linear" } },
+}
+
+
 
 
 
@@ -45,7 +57,7 @@ const Contact = () => {
 
 
   return (
-    <div id="contact" className='mt-[100px] mx-6 '>
+    <motion.div ref={ref} initial="hidden" variants={textVariants} animate={isInView ? "visible" : "hidden"}  id="contact" className='mt-[35px] pt-[65px] mx-6 '>
       <h4 className="md:text-8xl text-6xl font-bold uppercase pb-4 text-white ">Let&apos;s Work</h4>
       <h4 className="md:text-8xl text-6xl font-bold uppercase text-zinc-700 ">together</h4>
 
@@ -88,7 +100,7 @@ const Contact = () => {
       </div>
 
 
-    </div>
+    </motion.div>
   )
 }
 

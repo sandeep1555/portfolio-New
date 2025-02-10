@@ -1,13 +1,26 @@
 
+import { useInView ,motion} from "framer-motion";
+import { useRef } from "react";
 import { FaLinkedin, FaGithub } from "react-icons/fa";
 import { SiLeetcode } from "react-icons/si";
 
 
 const ProfileCard = () => {
-  return (
-    <div className='md:h-screen w-full  '>
 
-      <div className="card bg-base-100 md:w-96 w-[350px] shadow-xl ml-3 ">
+
+
+  const ref = useRef(null);
+
+  const textVariants = {
+    hidden: { opacity: 0, y: 50 },
+    visible: { opacity: 1, y: 0, transition: { duration: 1, ease: "easeOut" } },
+  }
+  const isInView = useInView(ref, { margin: "-100px" });
+
+  return (
+    <div className='md:h-screen w-full  overflow-y-hidden  '>
+
+      <motion.div ref={ref} variants={textVariants} animate={isInView ? "visible" : "hidden"} initail="hidden"  className="card bg-base-100 md:w-96 w-[350px] shadow-xl ml-3  ">
         <figure className="px-10 mt-10 ">
           <img
             src="assets/images/profile-pic.jpg"
@@ -36,7 +49,7 @@ const ProfileCard = () => {
 
           </div>
         </div>
-      </div>
+      </motion.div>
 
 
 

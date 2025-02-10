@@ -2,12 +2,25 @@ import { FaArrowRight } from "react-icons/fa6";
 import { IoLayersOutline } from "react-icons/io5";
 import { AiOutlineLayout } from "react-icons/ai";
 import { Link } from "react-scroll";
+import { useRef } from "react";
+import { useInView, motion } from "framer-motion";
 
 const Home = () => {
+
+
+  const ref = useRef(null);
+
+  const textVariants = {
+    hidden: { opacity: 0, y: 50 },
+    visible: { opacity: 1, y: 0, transition: { duration: 1, ease: "linear" } },
+  }
+  const isInView = useInView(ref, { margin: "-100px" });
   return (
-    <div id="home" className='md:mt-[-10px] px-6 mt-10 md:px-0 '>
-      <h4 className="md:text-8xl text-6xl font-bold uppercase pb-4 text-white ">Frontend</h4>
-      <h4 className="md:text-8xl text-6xl font-bold uppercase text-zinc-700 ">Developer</h4>
+    <motion.div variants={textVariants} animate={isInView ? "visible" : "hidden"} initail="hidden" id="home" ref={ref} className='md:mt-[-75px] md:pt-[20px]    px-6 mt-10 md:px-0  overflow-y-hidden'>
+      <div className="mt-10">
+        <h4 className="md:text-8xl text-6xl font-bold uppercase pb-4 text-white ">Frontend</h4>
+        <h4 className="md:text-8xl text-6xl font-bold uppercase text-zinc-700 ">Developer</h4>
+      </div>
       <p className="text-lg md:w-[500px] w-[330px] mt-6 text-stone-400">Focused on crafting seamless and interactive user experiences with modern web technologies. Committed to delivering clean, efficient code and staying ahead of industry trends.</p>
 
 
@@ -45,7 +58,7 @@ const Home = () => {
 
 
       </div>
-    </div>
+    </motion.div>
 
   )
 }

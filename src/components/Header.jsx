@@ -13,21 +13,21 @@ import { Link } from "react-scroll";
 
 const Header = () => {
   return (
-    <div className="flex  flex-row justify-center  items-center text-white bg-stone-800 py-4 px-4 rounded-xl  md:w-auto fixed z-50 bg-opacity-60  ">
-      <Link to="home" offset={-100} smooth={true} duration={500} className="relative group">
+    <div className="flex  flex-row justify-center  items-center text-white bg-stone-800 py-4 px-4 rounded-xl  md:w-auto fixed z-50 bg-opacity-60   ">
+      <Link to="home" offset={-100} smooth={true} duration={1000} className="relative group">
         <HiOutlineHome className="mx-3 w-6 h-6 hover:scale-125" />
         <span className="absolute left-1/2 transform -translate-x-1/2 mt-2 mb-2 opacity-0 group-hover:opacity-100 text-sm bg-black text-white p-1 rounded transition-opacity duration-300">
           Home
         </span>
       </Link>
 
-      <Link to="projects" smooth={true} duration={500} className="relative group">
+      <Link to="projects" smooth={true} duration={1000} className="relative group">
         <GoFileDirectory className="mx-3 w-6 h-6 hover:scale-125" />
         <span className="absolute left-1/2 transform -translate-x-1/2 mt-2 mb-2 opacity-0 group-hover:opacity-100 text-sm bg-black text-white p-1 rounded transition-opacity duration-300">
           Projects
         </span>
       </Link>
-      <Link to="skills" smooth={true} duration={500} className="relative group">
+      <Link to="skills" smooth={true} duration={1000} className="relative group">
         <FiTool className="mx-3 w-6 h-6 hover:scale-125" />
         <span className="absolute left-1/2 transform -translate-x-1/2 mt-2 mb-2 opacity-0 group-hover:opacity-100 text-sm bg-black text-white p-1 rounded transition-opacity duration-300">
           Skills
@@ -35,20 +35,20 @@ const Header = () => {
 
       </Link>
 
-      <Link to="internship" smooth={true} duration={500} className="relative group">
+      <Link to="internship" smooth={true} duration={1000} className="relative group">
         <PiSuitcase className="mx-3 w-6 h-6 hover:scale-125" />
         <span className="absolute left-1/2 transform -translate-x-1/2 mt-2 mb-2 opacity-0 group-hover:opacity-100 text-sm bg-black text-white p-1 rounded transition-opacity duration-300">
           Internship
         </span>
 
       </Link>
-      <Link to="education" smooth={true} duration={500} className="relative group">
+      <Link to="education" smooth={true} duration={1000} className="relative group">
         <FaGraduationCap className="mx-3 w-6 h-6 hover:scale-125" />
         <span className="absolute left-1/2 transform -translate-x-1/2 mt-2 mb-2 opacity-0 group-hover:opacity-100 text-sm bg-black text-white p-1 rounded transition-opacity duration-300">
           Education
         </span>
       </Link>
-      <Link to="contact" smooth={true} duration={500} className="relative group">
+      <Link to="contact" smooth={true} duration={1000} className="relative group">
         <IoInformationCircleOutline className="mx-3 w-6 h-6 hover:scale-125" />
         <span className="absolute left-1/2 transform -translate-x-1/2 mt-2 mb-2 opacity-0 group-hover:opacity-100 text-sm bg-black text-white p-1 rounded transition-opacity duration-300">
           Connect
