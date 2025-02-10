@@ -9,7 +9,7 @@ const Skills = () => {
     const isInView = useInView(ref, { margin: "-100px" });
     const skillsRef = useRef(null);
 
-    const isInSkillView = useInView(skillsRef, { margin: "-100px" });
+    const isInSkillView = useInView(skillsRef, { margin: "100px" });
 
     const textVariants = {
         hidden: { opacity: 0, y: 50 },

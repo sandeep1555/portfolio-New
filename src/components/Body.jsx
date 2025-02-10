@@ -17,7 +17,7 @@ const Body = () => {
       </div>
 
       {/* Main Content Wrapper */}
-      <div className="md:flex w-full md:mt-[50px] ">
+      <div className="md:flex w-full md:mt-[50px] flex flex-col justify-center items-center  ">
         {/* Fixed Profile Section */}
         <div className="md:w-5/12 md:px-[100px] md:fixed  md:left-0 md:top-[68%] md:-translate-y-1/2">
           <ProfileCard />

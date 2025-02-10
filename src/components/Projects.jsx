@@ -1,24 +1,37 @@
 import { LuSquareArrowOutUpRight } from "react-icons/lu";
 import { motion, useInView } from "framer-motion";
-import { useRef } from "react";
+import { useRef, useState, useEffect } from "react";
 
 const Projects = () => {
   const ref = useRef(null);
-  const isInView = useInView(ref, {  margin: "-100px" });
-  const projectRef=useRef(null);
+  const projectRef = useRef(null);
 
-  const isInProjectView = useInView(projectRef, {  margin: "-100px" });
+  const [margin, setMargin] = useState("700px"); // Default for mobile
+
+  // Update margin based on screen size
+  useEffect(() => {
+    const updateMargin = () => {
+      setMargin(window.innerWidth >= 768 ? "80px" : "700px");
+    };
+
+    updateMargin(); // Set initially
+    window.addEventListener("resize", updateMargin);
+
+    return () => window.removeEventListener("resize", updateMargin);
+  }, []);
+
+  const isInView = useInView(ref, { margin: "-100px" });
+  const isInProjectView = useInView(projectRef, { margin });
 
   const textVariants = {
     hidden: { opacity: 0, y: 50 },
-    visible: { opacity: 1, y: 0, transition: { duration: 1, ease:  "linear" } },
+    visible: { opacity: 1, y: 0, transition: { duration: 1, ease: "linear" } },
   };
 
-  const projectCardVariant={
-
-      hidden: { opacity: 0, y: 30 },
-      visible: { opacity: 1, y: 0, transition: { duration: 1, ease: "easeOut" }}
-    }
+  const projectCardVariant = {
+    hidden: { opacity: 0, y: 30 },
+    visible: { opacity: 1, y: 0, transition: { duration: 1, ease: "easeOut" } },
+  };
 
   const projects = [
     {
@@ -31,6 +44,14 @@ const Projects = () => {
     },
     {
       id: 2,
+      name: "devBuilder",
+      photoUrl: "assets/images/devBuilder-img.png",
+      description:
+        "A construction site management app where owners create projects, assign tasks, track labor attendance, and monitor progress with role-based access.",
+      liveLink: "https://thedevbuilder.online",
+    },
+    {
+      id: 3,
       name: "Youtube-Clone",
       photoUrl: "assets/images/youtube-img.png",
       description:
@@ -38,7 +59,7 @@ const Projects = () => {
       liveLink: "https://my-youtube-phi.vercel.app/",
     },
     {
-      id: 3,
+      id: 4,
       name: "Netflix-GPT",
       photoUrl: "assets/images/netflix-img-2.png",
       description:
@@ -67,9 +88,12 @@ const Projects = () => {
         Projects
       </motion.h4>
 
-      <div>
+      <div className="mt-10 md:mt-0">
         {projects.map((project) => (
-          <motion.div animate={ isInProjectView  ? "visible" : "hidden"}  ref={projectRef}   variants={projectCardVariant}
+          <motion.div
+            animate={isInProjectView ? "visible" : "hidden"}
+            variants={projectCardVariant}
+            ref={projectRef}
             key={project.id}
             className="card lg:card-side shadow-xl my-4 md:w-[800px] p-4 md:hover:scale-105 cursor-default bg-neutral-800 flex justify-center items-center"
             onClick={() =>
@@ -87,7 +111,7 @@ const Projects = () => {
               <h2 className="card-title text-3xl mt-[-20px] text-white">
                 {project.name}
               </h2>
-              <p className="text-stone-400">{project.description}</p>
+              <p className="text-stone-400 md:w-[50vh]">{project.description}</p>
               <div className="card-actions md:justify-end justify-center">
                 <button className="btn border-0 text-white rounded-lg bg-gradient-to-r from-orange-700 to-red-600 md:hidden block mt-4">
                   View
