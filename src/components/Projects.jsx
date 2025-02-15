@@ -11,7 +11,7 @@ const Projects = () => {
   // Update margin based on screen size
   useEffect(() => {
     const updateMargin = () => {
-      setMargin(window.innerWidth >= 768 ? "80px" : "700px");
+      setMargin(window.innerWidth >= 768 ? "50px" : "1000px");
     };
 
     updateMargin(); // Set initially

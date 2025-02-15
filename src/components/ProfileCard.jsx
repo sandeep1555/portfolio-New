@@ -20,7 +20,7 @@ const ProfileCard = () => {
   return (
     <div className='md:h-screen w-full  overflow-y-hidden  '>
 
-      <motion.div ref={ref} variants={textVariants} animate={isInView ? "visible" : "hidden"} initail="hidden"  className="card bg-base-100 md:w-96 w-[350px] shadow-xl ml-3  ">
+      <motion.div ref={ref} variants={textVariants} animate={isInView ? "visible" : "hidden"} initail="hidden"  className="card bg-base-100 md:w-96 w-[350px] shadow-xl md:ml-3  ">
         <figure className="px-10 mt-10 ">
           <img
             src="assets/images/profile-pic.jpg"

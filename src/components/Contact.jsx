@@ -21,13 +21,16 @@ const Contact = () => {
     }).then(
       (response) => {
         console.log('SUCCESS!', response.status, response.text);
-        setSuccessMessage("your message is send");
+        setSuccessMessage("Your message is send");
         setloading(false);
         setName("");
         setEmail("");
         setMessage("");
-        setInterval(() => {
+        errorMessge!="" && setTimeout(() => {
           setErroeMessage("")
+        }, 5000)
+        successMessage!="" &&  setTimeout(() => {
+          setSuccessMessage("")
         }, 5000)
       },
       (error) => {
