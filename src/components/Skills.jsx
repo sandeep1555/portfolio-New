@@ -1,5 +1,5 @@
 import { useInView,motion } from "framer-motion";
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 
 
 const Skills = () => {
@@ -8,8 +8,21 @@ const Skills = () => {
     const ref = useRef(null);
     const isInView = useInView(ref, { margin: "-100px" });
     const skillsRef = useRef(null);
+    const [margin, setMargin] = useState("700px"); // Default for mobile
 
-    const isInSkillView = useInView(skillsRef, { margin: "180px" });
+
+    useEffect(() => {
+        const updateMargin = () => {
+          setMargin(window.innerWidth >= 768 ? "50px" : "400px");
+        };
+    
+        updateMargin(); // Set initially
+        window.addEventListener("resize", updateMargin);
+    
+        return () => window.removeEventListener("resize", updateMargin);
+      }, [])
+
+    const isInSkillView = useInView(skillsRef, { margin: margin });
 
     const textVariants = {
         hidden: { opacity: 0, y: 50 },
