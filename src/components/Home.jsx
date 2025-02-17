@@ -16,7 +16,7 @@ const Home = () => {
   }
   const isInView = useInView(ref, { margin: "-100px" });
   return (
-    <motion.div variants={textVariants} animate={isInView ? "visible" : "hidden"} initail="hidden" id="home" ref={ref} className='md:mt-[-75px] md:pt-[20px]    px-6 mt-10 md:px-0  overflow-y-hidden'>
+    <motion.div variants={textVariants} animate={isInView ? "visible" : "hidden"} initail="hidden" id="home" ref={ref} className='md:mt-[-110px] md:pt-[20px]    px-6 mt-10 md:px-0  overflow-y-hidden'>
       <div className="mt-10">
         <h4 className="md:text-8xl text-6xl font-bold uppercase pb-4 text-white ">Frontend</h4>
         <h4 className="md:text-8xl text-6xl font-bold uppercase text-zinc-700 ">Developer</h4>

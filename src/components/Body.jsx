@@ -19,12 +19,12 @@ const Body = () => {
       {/* Main Content Wrapper */}
       <div className="md:flex w-full md:mt-[50px] flex flex-col justify-center items-center  ">
         {/* Fixed Profile Section */}
-        <div className="md:w-5/12 md:px-[100px] md:fixed  md:left-0 md:top-[68%] md:-translate-y-1/2">
+        <div className="md:w-5/12 md:px-[100px] md:fixed  md:left-0 md:top-[60%] md:-translate-y-1/2">
           <ProfileCard />
         </div>
 
         {/* Scrollable Home Section */}
-        <div className="md:w-7/12 w-full md:ml-[41%] md:overflow-y-hidden h-full ">
+        <div className="md:w-7/12 w-full md:ml-[41%]  h-full ">
           <Home />
           <Projects />
           <Skills />
