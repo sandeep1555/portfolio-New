@@ -38,7 +38,7 @@ const Header = () => {
       <Link to="internship" smooth={true} duration={1000} className="relative group">
         <PiSuitcase className="mx-3 w-6 h-6 hover:scale-125" />
         <span className="absolute left-1/2 transform -translate-x-1/2 mt-2 mb-2 opacity-0 group-hover:opacity-100 text-sm bg-black text-white p-1 rounded transition-opacity duration-300">
-          Internship
+          Work Experience
         </span>
 
       </Link>
